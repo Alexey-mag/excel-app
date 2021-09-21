@@ -42,9 +42,6 @@ export class ExcelComponent extends DomListener {
     isWatching(key) {
         return this.subscribe.includes(key)
     }
-    // $subscribe(fn) {
-    //     this.storeSub = this.store.subscribe(fn)
-    // }
 
     // Инициализируем компонент, добавляем DOM слушатели
     init() {
@@ -55,6 +52,5 @@ export class ExcelComponent extends DomListener {
     destroy() {
         this.removeDOMListeners()
         this.unsubscribres.forEach(unsub => unsub())
-        // this.storeSub.unsubscribe()
     }
 }

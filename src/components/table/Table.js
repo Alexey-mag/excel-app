@@ -49,10 +49,6 @@ export class Table extends ExcelComponent {
                 ids: this.selection.selectedIds
             }))
         })
-
-        // this.$subscribe(state => {
-        //     console.log('TableState', state)
-        // })
     }
 
     selectCell($cell) {
@@ -107,7 +103,6 @@ export class Table extends ExcelComponent {
     }
 
     onInput(event) {
-        // this.$emit('table:input', $(event.target))
         this.updateTextInStore($(event.target).text())
     }
 }
