@@ -95,10 +95,6 @@ export function createTable(rowsCount = 15, state = {}) {
         .map(toChar)
         .map(withWidthFrom(state))
         .map(toColumn)
-        // .map((col, index) => {
-        //     const width = getWidth(state.colState, index)
-        //     return toColumn(col, index, width)
-        // })
         .join('')
 
     rows.push(createRow(null, cols, {}))
@@ -106,7 +102,6 @@ export function createTable(rowsCount = 15, state = {}) {
     for (let row = 0; row < rowsCount; row++) {
         const cells = new Array(colsCount)
             .fill('')
-            // .map((_, col) => toCell(row, col))
             .map(toCell(state, row))
             .join('')
         rows.push(createRow(row + 1, cells, state.rowState))

@@ -3,8 +3,6 @@ import {$} from '../../core/dom';
 export function resizeHandler($root, event) {
     return new Promise(resolve => {
         const $resizer = $(event.target)
-        // const $parent = $resizer.$el.parentNode // bad!
-        // const $parent = $resizer.$el.closest('.column') // better but bad
         const $parent = $resizer.closest('[data-type="resizable"]')
         const coords = $parent.getCoords()
         const type = $resizer.data.resize
@@ -39,7 +37,6 @@ export function resizeHandler($root, event) {
             resolve({
                 value,
                 type,
-                // id: type === 'col' ? $parent.data.col : $parent.data.row
                 id: $parent.data[type]
             })
 
